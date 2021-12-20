@@ -1,6 +1,6 @@
 Config = {}
 
---POLICE NOFITY
+--POLICE NOTIFY
 Config.EnablePoliceNotify = true -- When Player is Processing Drugs (configured with linden_outlawalert)
 Config.PoliceNotifyBlipSpirit = 161
 Config.PoliceNotifyBlipScale = 1.0
