@@ -39,7 +39,7 @@ function WashMoney(amountToWash)
                         TriggerServerEvent("norp-moneywash:canWashMoney", amountToWash)
 					end
             else
-				exports['norpNotify']:Alert("Money Laundering", "You dont have an ID Card to access Money Wash.", 5000, 'warning')
+				exports['norpNotify']:Alert("Money Laundering", "You dont have an ID Card to access Money Wash.", 5000, 'error')
             end
         end)
     else
