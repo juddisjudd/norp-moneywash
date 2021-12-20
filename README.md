@@ -8,7 +8,7 @@ Simple Money Laundering "washing" for ESX
 
 [QTarget](https://github.com/overextended/qtarget)
 
-[nh-keyboard](https://github.com/nightowlsrp/nh-keyboard) (when re-work is done)
+[zf_dialog](https://github.com/zf-development/zf_dialog)
 
 norpNotify (can easily be swapped for your notification system)
 
