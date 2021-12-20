@@ -24,39 +24,39 @@ function WashMoney(amountToWash)
     if Config.NeedIDCardToWashMoney then
         ESX.TriggerServerCallback("norp-moneywash:checkIDCard", function(result)
             if result == true then
-                     ESX.UI.Menu.Open("dialog",GetCurrentResourceName(),"MoneyWashing",
-                    {title = "How Much Money do you want to wash?"},
-                    function(l, m)
-                        m.close()
-                        amountToWash = tonumber(l.value)
-                        if amountToWash == 0 or amountToWash == nil then
-                            return
-                        end
+                    local dialog = exports['zf_dialog']:DialogInput({
+                        header = "How Much Money do you want to wash?", 
+                        rows = {
+                            {
+                                id = 0, 
+                                txt = "Ammount"
+                            }
+                        }
+                    })
+                    if dialog ~= nil then
+                        if dialog[1].input == nil then return end
+                        local amountToWash = tonumber(dialog[1].input)
                         TriggerServerEvent("norp-moneywash:canWashMoney", amountToWash)
-                    end,
-                    function(l, m)
-                        m.close()
-                    end
-                )
+					end
             else
 				exports['norpNotify']:Alert("Money Laundering", "You dont have an ID Card to access Money Wash.", 5000, 'warning')
             end
         end)
     else
-        ESX.UI.Menu.Open("dialog",GetCurrentResourceName(),"MoneyWashing",
-                    {title = "How Much Money do you want to wash?"},
-                    function(l, m)
-                        m.close()
-                        amountToWash = tonumber(l.value)
-                        if amountToWash == 0 or amountToWash == nil then
-                            return
-                        end
+                    local dialog = exports['zf_dialog']:DialogInput({
+                        header = "How Much Money do you want to wash?", 
+                        rows = {
+                            {
+                                id = 0, 
+                                txt = "Ammount"
+                            }
+                        }
+                    })
+                    if dialog ~= nil then
+                        if dialog[1].input == nil then return end
+                        local amountToWash = tonumber(dialog[1].input)
                         TriggerServerEvent("norp-moneywash:canWashMoney", amountToWash)
-                    end,
-                    function(l, m)
-                        m.close()
-                    end
-                )
+					end
     end
 end
 
@@ -64,14 +64,13 @@ RegisterNetEvent("norp-moneywash:MoneyWashFunc")
 AddEventHandler("norp-moneywash:MoneyWashFunc", function(amountToWash)
         exports.rprogress:Custom(
             {
-                Duration = 25000,
+                Async = true,
+				Duration = 25000,
                 Label = "MONEY IS LAUNDERING. . .",
-                Animation = {
-                    scenario = "WORLD_HUMAN_MAID_CLEAN", -- https://pastebin.com/6mrYTdQv
-                },
+				Easing = "easeLinear",
                 DisableControls = {
                         Mouse = false,
-                        Player = true,
+                        Player = false,
                         Vehicle = true
                 }
             },
@@ -124,6 +123,7 @@ Citizen.CreateThread(function()
         event = "moneywash:qt",
         icon = "fas fa-money-bill",
         label = "Wash Money",
+        required_item = "moneywash_card",
         },
     },
         distance = 4.0
