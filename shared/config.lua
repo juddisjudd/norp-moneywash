@@ -1,5 +1,8 @@
 Config = {}
 
+Config.EnableVersionCheck = true
+Config.VersionCheckInterval = 60
+
 --POLICE NOTIFY
 Config.EnablePoliceNotify = true -- When Player is Processing Drugs (configured with linden_outlawalert)
 Config.PoliceNotifyBlipSpirit = 161
