@@ -5,7 +5,7 @@ game         'gta5'
 --[[ Resource Information ]]--
 name         'NORP MoneyWash'
 author       'Judd#7644'
-version      '1.0.0'
+version      '1.0.1'
 description  'Basic moneywash thing.'
 
 --[[ Manifest ]]--
