@@ -86,7 +86,7 @@ AddEventHandler("norp-moneywash:MoneyWashFunc", function(amountToWash)
     local laundromat = vector3(1137.46, -991.97, 46.11)
     local chance = math.random(0,100)
     if chance > 27 then
-        TriggerServerEvent("norp-moneywash:policenotify", laundromat)
+        TriggerServerEvent("norp-moneywash:notifiPolice", laundromat)
     end
 end)
 
