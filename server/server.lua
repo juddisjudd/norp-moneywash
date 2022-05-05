@@ -10,7 +10,7 @@ RegisterServerEvent('norp-moneywash:canWashMoney')
 AddEventHandler('norp-moneywash:canWashMoney',function(amountToWash)
     local xPlayer = ESX.GetPlayerFromId(source)
     local bm = xPlayer.getAccount('black_money').money
-    if bm > amountToWash and xPlayer.getAccount('black_money').money >= bm then
+    if bm >= Config.MinAmountToWash and xPlayer.getAccount('black_money').money >= bm then
         xPlayer.removeAccountMoney('black_money', amountToWash)
         TriggerClientEvent("norp-moneywash:MoneyWashFunc", source, amountToWash)
     else
