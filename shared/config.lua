@@ -8,6 +8,7 @@ Config.EnablePoliceNotify = true -- When Player is Processing Drugs (configured 
 Config.PoliceNotifyBlipSpirit = 161
 Config.PoliceNotifyBlipScale = 1.0
 Config.PoliceNotifyBlipColor = 1
+Config.MinAmountToWash = 1000
 
 --MONEYWASH
 Config.NeedIDCardToWashMoney = false
