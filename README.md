@@ -1,6 +1,8 @@
 # NORP-MONEYWASH
 Simple Money Laundering "washing" for ESX
 
+[VIDEO](https://www.youtube.com/watch?v=B6EjcSKgGRs)
+
 # REQUIREMENTS
 [ESX Legacy](https://github.com/overextended/es_extended)
 
